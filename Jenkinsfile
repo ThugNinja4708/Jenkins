@@ -10,7 +10,7 @@ pipeline{
       branch 'main'
     }
     steps{
-      sh "echo step-2 "
+      sh "echo step-2 main branch"
     }
   
   }
