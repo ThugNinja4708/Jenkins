@@ -1,24 +1,25 @@
-pipeline{
+
+pipeline {
   agent any
-  stage("stage-1"){
-    steps{
-      sh "echo step 1"
+  stages {
+    stage('Example Build') {
+      steps {
+        sh 'echo Hello World'
+      }
+    }
+    stage('Example Deploy') {
+      when {
+        branch 'main'
+      }
+      steps {
+        sh 'echo main branch'
+      }
+      when {
+        branch 'preProd'
+      }
+      steps {
+        sh 'echo preProd'
+      }
     }
   }
-  stage("stage-2"){
-    when{
-      branch 'main'
-    }
-    steps{
-      sh "echo step-2 in main"
-    }
-    when{
-      branch 'preProd'
-    }
-    steps{
-      sh 'echo step-2 in preProd branch'
-    
-    }
-  }
- 
 }
