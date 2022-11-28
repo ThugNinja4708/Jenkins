@@ -10,8 +10,15 @@ pipeline{
       branch 'main'
     }
     steps{
-      sh "echo step-2 "
+      sh "echo step-2 in main"
     }
-  
+    when{
+      branch 'preProd'
+    }
+    steps{
+      sh 'echo step-2 in preProd branch'
+    
+    }
   }
+ 
 }
