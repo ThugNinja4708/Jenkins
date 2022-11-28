@@ -2,15 +2,19 @@ pipeline {
   agent any
   stages {
     stage('Example Build') {
-      steps {
-        sh 'echo Hello World'
+      options {
+        timeout(time: 10, unit: 'SECONDS') 
       }
+
       input {
         message "What is your first name?"
         ok "Submit"
         parameters {
           string(defaultValue: 'Dave', name: 'FIRST_NAME', trim: true) 
         }
+      }
+      steps {
+        sh 'echo Hello World'
       }
     }
     stage('Example Deploy') {
