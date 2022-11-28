@@ -14,12 +14,6 @@ pipeline {
       steps {
         sh 'echo main branch'
       }
-      when {
-        branch 'preProd'
-      }
-      steps {
-        sh 'echo preProd'
-      }
     }
   }
 }
