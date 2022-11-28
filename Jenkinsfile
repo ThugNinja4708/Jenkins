@@ -8,7 +8,7 @@ pipeline {
 
       input {
         message "What is your first name:"
-        ok "Submit"
+        ok "Submit.."
         parameters {
           string(defaultValue: 'Thug', name: 'FIRST_NAME', trim: true) 
         }
